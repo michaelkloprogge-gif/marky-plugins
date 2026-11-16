@@ -1,0 +1,61 @@
+{
+  "format": "marky-plugins/1",
+  "updated": "2026-11-16T16:45:42.236Z",
+  "plugins": [
+    {
+      "id": "bar-charts",
+      "name": "Bar charts",
+      "version": "1.0.0",
+      "description": "Draws ```chart code blocks (one \"label: number\" per line, optional \"title:\") as bar charts.",
+      "author": "Marky examples",
+      "permissions": [
+        "codeBlocks"
+      ],
+      "file": "plugins/charts.js",
+      "sha256": "429e0bcd2a6f2659f23fc050ae7ebcb511d96b708d56733ae934789a6115b386",
+      "size": 2828
+    },
+    {
+      "id": "emoji-shortcodes",
+      "name": "Emoji shortcodes",
+      "version": "1.0.0",
+      "description": "Shows :smile:, :tada:, :rocket: and other shortcodes as emoji in the preview.",
+      "author": "Marky examples",
+      "permissions": [
+        "markdown"
+      ],
+      "file": "plugins/emoji.js",
+      "sha256": "57da34c936596f38c80ff18d04b4d65c33adf0f3e6977562e8e2a11d8aa5ead2",
+      "size": 1389
+    },
+    {
+      "id": "table-of-contents",
+      "name": "Table of contents",
+      "version": "1.0.0",
+      "description": "Insert or refresh a linked table of contents (between <!-- toc --> markers) from the note's headings.",
+      "author": "Marky",
+      "permissions": [
+        "document:read",
+        "document:write"
+      ],
+      "file": "plugins/table-of-contents.js",
+      "sha256": "66d7a967288ebd771a12848600d72e08754629e04a4ad205d8de2a8ba560b5ab",
+      "size": 2223
+    },
+    {
+      "id": "word-goal",
+      "name": "Word goal",
+      "version": "1.0.0",
+      "description": "Set a word-count target and see your progress in the status bar.",
+      "author": "Marky examples",
+      "permissions": [
+        "document:read",
+        "statusBar",
+        "storage"
+      ],
+      "file": "plugins/word-goal.js",
+      "sha256": "486b18910327038ae75e8523474e432c6c4c52cf3ae8c85f03f59356123ac6b4",
+      "size": 1463
+    }
+  ]
+}
