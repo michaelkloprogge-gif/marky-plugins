@@ -18,7 +18,7 @@ jobs:
           node-version: 22
       - run: npm ci
       # Headers are valid, plugins activate in a sandbox-like context and behave as tested
-      - run: node --test test/
+      - run: node --test test/*.test.mjs
       # index.json must match the plugins exactly (run "npm run index" and commit it)
       - name: Index is up to date
         run: |

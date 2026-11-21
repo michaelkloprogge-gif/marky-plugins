@@ -35,7 +35,7 @@ Marky.definePlugin({ activate(marky) { /* … */ } });
 
 ```sh
 npm ci
-npm test            # or: node --test test/
+npm test            # or: node --test test/*.test.mjs
 ```
 
 Add a test for your plugin to `test/plugins.test.mjs`: `loadPlugin()` runs it the way
