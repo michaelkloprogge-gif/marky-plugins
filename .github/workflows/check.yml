@@ -1,0 +1,31 @@
+name: Check plugins
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      # Headers are valid, plugins activate in a sandbox-like context and behave as tested
+      - run: node --test test/
+      # index.json must match the plugins exactly (run "npm run index" and commit it)
+      - name: Index is up to date
+        run: |
+          node scripts/build-index.mjs
+          git diff --exit-code -- index.json || (echo "::error::index.json is out of date: run npm run index" && exit 1)
+      # On main, the list Marky downloads must carry the maintainer's signature. Pull requests
+      # are signed by the maintainer after review, so they don't need one.
+      - name: Signature
+        if: github.event_name == 'push'
+        run: node scripts/verify-index.mjs

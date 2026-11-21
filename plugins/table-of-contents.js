@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Insert or refresh a linked table of contents (between <!-- toc --> markers) from the note's headings.",
   "author": "Marky",
+  "category": "structure",
   "permissions": ["document:read", "document:write"]
 }
 */

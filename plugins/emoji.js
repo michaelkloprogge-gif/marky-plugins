@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Shows :smile:, :tada:, :rocket: and other shortcodes as emoji in the preview.",
   "author": "Marky examples",
+  "category": "writing",
   "permissions": ["markdown"]
 }
 */

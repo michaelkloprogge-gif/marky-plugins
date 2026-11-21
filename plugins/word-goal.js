@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Set a word-count target and see your progress in the status bar.",
   "author": "Marky examples",
+  "category": "productivity",
   "permissions": ["document:read", "statusBar", "storage"]
 }
 */

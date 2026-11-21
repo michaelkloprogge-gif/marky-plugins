@@ -1,19 +1,74 @@
 {
   "format": "marky-plugins/1",
-  "updated": "2026-11-16T16:45:42.236Z",
   "plugins": [
+    {
+      "id": "calc",
+      "name": "Calculations",
+      "version": "1.0.0",
+      "description": "Works out ```calc code blocks line by line: sums, named values (rent = 1200) and totals, shown next to each line.",
+      "author": "Marky",
+      "category": "data",
+      "details": "A small calculator inside your notes for budgets, estimates and sizing. Each line is a sum (12 * 4), a named value (hours = 3 * 8) or a reference to earlier names (cost = hours * rate). \"total\" or \"sum\" adds up every result above it since the last total. Supports + − × ÷ % ^, brackets and round, floor, ceil, min, max, sqrt, abs. Lines starting with # are comments.",
+      "permissions": [
+        "codeBlocks"
+      ],
+      "codeBlocks": [
+        "calc"
+      ],
+      "file": "plugins/calc.js",
+      "sha256": "e57d19df509553b48dbfcb92f831e2c44eddb18f1eb68747cc1f2e32c0237c75",
+      "size": 5698
+    },
+    {
+      "id": "change-case",
+      "name": "Change case",
+      "version": "1.0.0",
+      "description": "Commands to turn the selection (or the current line) into Title Case, Sentence case, UPPERCASE or lowercase.",
+      "author": "Marky",
+      "category": "language",
+      "details": "Four commands in the command palette (F1 › Plugins). Title Case keeps short words like \"and\", \"of\" and \"the\" small (English) and leaves words that are already all capitals, like API or ADR, alone. Markdown around the text (# for headings, list markers) is kept.",
+      "permissions": [
+        "document:read",
+        "document:write"
+      ],
+      "file": "plugins/change-case.js",
+      "sha256": "ff62d69cfff5d7654769912f3d35584e71f0c01a83eda3ed5ee1af3d0c59ee61",
+      "size": 3091
+    },
     {
       "id": "bar-charts",
       "name": "Bar charts",
       "version": "1.0.0",
       "description": "Draws ```chart code blocks (one \"label: number\" per line, optional \"title:\") as bar charts.",
       "author": "Marky examples",
+      "category": "data",
       "permissions": [
         "codeBlocks"
       ],
+      "codeBlocks": [
+        "chart"
+      ],
       "file": "plugins/charts.js",
-      "sha256": "429e0bcd2a6f2659f23fc050ae7ebcb511d96b708d56733ae934789a6115b386",
-      "size": 2828
+      "sha256": "b6f4075037352b80a4d121c14d712e0202cafa16deaf69dbf965dbeb74b5f0f4",
+      "size": 2850
+    },
+    {
+      "id": "csv-table",
+      "name": "CSV tables",
+      "version": "1.0.0",
+      "description": "Shows ```csv code blocks as tables. Commas, semicolons and tabs all work; the first row is the header.",
+      "author": "Marky",
+      "category": "data",
+      "details": "Paste data from a spreadsheet or export into a ```csv block and it shows as a table in the preview and in exports, while the note keeps the plain data. Quoted values (\"a, b\") and numbers aligned to the right are handled. Up to 2,000 rows.",
+      "permissions": [
+        "codeBlocks"
+      ],
+      "codeBlocks": [
+        "csv"
+      ],
+      "file": "plugins/csv-table.js",
+      "sha256": "ece8a7e278c88459a4def6f0a370769f7fcd755334c05a224e0869325ee7fc05",
+      "size": 2974
     },
     {
       "id": "emoji-shortcodes",
@@ -21,12 +76,97 @@
       "version": "1.0.0",
       "description": "Shows :smile:, :tada:, :rocket: and other shortcodes as emoji in the preview.",
       "author": "Marky examples",
+      "category": "writing",
       "permissions": [
         "markdown"
       ],
       "file": "plugins/emoji.js",
-      "sha256": "57da34c936596f38c80ff18d04b4d65c33adf0f3e6977562e8e2a11d8aa5ead2",
-      "size": 1389
+      "sha256": "e735c41c24c3c26e7fcf8610ab7ff90e43f4fffba91fd8bc74549d249f1fd29e",
+      "size": 1414
+    },
+    {
+      "id": "kanban",
+      "name": "Kanban board",
+      "version": "1.0.0",
+      "description": "Draws ```kanban code blocks as a board: a \"## Column\" line starts a column, \"- card\" lines are its cards.",
+      "author": "Marky",
+      "category": "structure",
+      "details": "Write a board as plain text, so it stays readable in any editor and in Git. Start a column with \"## To do\", add cards with \"- Card\". \"- [x] Card\" shows the card as done. Up to 8 columns of 30 cards.",
+      "permissions": [
+        "codeBlocks"
+      ],
+      "codeBlocks": [
+        "kanban"
+      ],
+      "file": "plugins/kanban.js",
+      "sha256": "31812b5f8c6719c856f6d299209d3eae0a7494eca5aac9170f74b86ef482e78e",
+      "size": 4385
+    },
+    {
+      "id": "pomodoro",
+      "name": "Focus timer",
+      "version": "1.0.0",
+      "description": "A Pomodoro timer in the status bar: 25 minutes of writing, then a 5-minute break. Start, pause and set the lengths from the command palette.",
+      "author": "Marky",
+      "category": "productivity",
+      "details": "Commands: \"Focus timer: start or pause\", \"Focus timer: reset\" and \"Focus timer: set lengths\". The status bar shows the time left; Marky tells you when a focus round or a break ends. Every fourth break is 15 minutes. The lengths you choose are remembered.",
+      "permissions": [
+        "statusBar",
+        "storage"
+      ],
+      "file": "plugins/pomodoro.js",
+      "sha256": "888bc55bf7c252fe5f5883858ccd05cae906e28b91ea61209d1eccf2fb8ff524",
+      "size": 2962
+    },
+    {
+      "id": "qr-code",
+      "name": "QR codes",
+      "version": "1.0.0",
+      "description": "Turns ```qr code blocks (a link or any text) into a QR code in the preview and in exports.",
+      "author": "Marky",
+      "category": "other",
+      "details": "Handy for slides, printed handouts and posters: put a link in a ```qr block and it shows as a scannable code. Made on your computer (nothing is sent anywhere), up to about 2,000 characters, with medium error correction so a slightly damaged print still scans.",
+      "permissions": [
+        "codeBlocks"
+      ],
+      "codeBlocks": [
+        "qr"
+      ],
+      "file": "plugins/qr-code.js",
+      "sha256": "07694f3d0e445837f21eb61cbece774fe3d37885eeba7b00006dfd3288522433",
+      "size": 10240
+    },
+    {
+      "id": "readability",
+      "name": "Readability",
+      "version": "1.0.0",
+      "description": "A side panel with the reading level of the open note (English and Dutch), reading time and its longest sentences.",
+      "author": "Marky",
+      "category": "writing",
+      "details": "Shows the Flesch reading-ease score (or Flesch–Douma for Dutch, picked automatically), the average sentence length, the reading time and the five longest sentences, so you can see where a text gets heavy. Code blocks, front matter, links and Markdown syntax are left out of the count. Updates as you type.",
+      "permissions": [
+        "document:read",
+        "panel"
+      ],
+      "file": "plugins/readability.js",
+      "sha256": "5c56720e36850aa3345653a049e77842890a32703bc1f96a3f57f2a7307e7214",
+      "size": 4910
+    },
+    {
+      "id": "repeated-words",
+      "name": "Repeated words",
+      "version": "1.0.0",
+      "description": "A side panel listing words you use a lot in the open note, and accidental doubles like \"the the\".",
+      "author": "Marky",
+      "category": "language",
+      "details": "Lists the words that appear most often (leaving out short common words in English and Dutch), how often, and any word written twice in a row. Useful when editing a text that keeps saying \"important\" or \"solution\". Code blocks and front matter are ignored.",
+      "permissions": [
+        "document:read",
+        "panel"
+      ],
+      "file": "plugins/repeated-words.js",
+      "sha256": "0abaf396d003a2ca80ee5f0ef7bbec89b44e679ae56f14e035925c793c357488",
+      "size": 3256
     },
     {
       "id": "table-of-contents",
@@ -34,13 +174,14 @@
       "version": "1.0.0",
       "description": "Insert or refresh a linked table of contents (between <!-- toc --> markers) from the note's headings.",
       "author": "Marky",
+      "category": "structure",
       "permissions": [
         "document:read",
         "document:write"
       ],
       "file": "plugins/table-of-contents.js",
-      "sha256": "66d7a967288ebd771a12848600d72e08754629e04a4ad205d8de2a8ba560b5ab",
-      "size": 2223
+      "sha256": "a86a06f5351203d1e7548bbbd0f25235e4f62ae700d67174cb4cf1621f0f7e10",
+      "size": 2250
     },
     {
       "id": "word-goal",
@@ -48,14 +189,15 @@
       "version": "1.0.0",
       "description": "Set a word-count target and see your progress in the status bar.",
       "author": "Marky examples",
+      "category": "productivity",
       "permissions": [
         "document:read",
         "statusBar",
         "storage"
       ],
       "file": "plugins/word-goal.js",
-      "sha256": "486b18910327038ae75e8523474e432c6c4c52cf3ae8c85f03f59356123ac6b4",
-      "size": 1463
+      "sha256": "c719e2b2550633a27023ff76b4b0b1c612540a57106cf7bf3ceb041435937c0c",
+      "size": 1493
     }
   ]
 }

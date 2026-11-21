@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Draws ```chart code blocks (one \"label: number\" per line, optional \"title:\") as bar charts.",
   "author": "Marky examples",
+  "category": "data",
   "permissions": ["codeBlocks"],
   "codeBlocks": ["chart"]
 }

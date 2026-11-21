@@ -1,0 +1,15 @@
+{
+  "name": "marky-plugins",
+  "private": true,
+  "type": "module",
+  "description": "The plugin market for Marky: plugins, the signed index and the tools that check and build it.",
+  "scripts": {
+    "test": "node --test test/",
+    "index": "node scripts/build-index.mjs",
+    "sign": "node scripts/sign-index.mjs",
+    "verify": "node scripts/verify-index.mjs"
+  },
+  "devDependencies": {
+    "jsqr": "1.4.0"
+  }
+}
